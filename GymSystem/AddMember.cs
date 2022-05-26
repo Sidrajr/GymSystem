@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GymSystem
 {
@@ -17,7 +18,7 @@ namespace GymSystem
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -59,10 +60,10 @@ namespace GymSystem
         {
 
         }
-
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-3TTOKDJR\SQLEXPRESS;Initial Catalog=GymDb;Integrated Security=True;Pooling=False");
         private void AddMember_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -128,6 +129,54 @@ namespace GymSystem
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+             if (NameTb.Text == "" || PhoneTb.Text == "" || AmountTb.Text == ""|| AgeTb.Text =="")
+            {
+                MessageBox.Show("Está faltando informações!");
+
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();
+                    string query = "insert into MemberTbl values('" + NameTb.Text + "', '" + PhoneTb.Text + "','" + AgeTb.Text + "','" + GenderCb.SelectedItem.ToString() + "','" + AmountTb.Text + "','" + TimingCb.SelectedItem.ToString() + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Membro adicionado com sucesso!");
+                    Con.Close();
+                    AmountTb.Text = "";
+                    AgeTb.Text = "";
+                    NameTb.Text = "";
+                    PhoneTb.Text = "";
+                    GenderCb.Text = "";
+                    TimingCb.Text = "";
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            AmountTb.Text = "";
+            AgeTb.Text = "";
+            NameTb.Text = "";
+            PhoneTb.Text = "";
+            GenderCb.Text = "";
+            TimingCb.Text = "";
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            MainForm log = new MainForm();
+            log.Show();
+            this.Hide();
         }
     }
 }

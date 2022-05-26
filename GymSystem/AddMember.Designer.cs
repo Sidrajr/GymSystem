@@ -32,18 +32,18 @@ namespace GymSystem
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PhoneTb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AgeTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.GenderCb = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.AmountTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TimingCb = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -86,12 +86,12 @@ namespace GymSystem
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // NameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(58, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 31);
-            this.textBox1.TabIndex = 5;
+            this.NameTb.Location = new System.Drawing.Point(58, 184);
+            this.NameTb.Name = "NameTb";
+            this.NameTb.Size = new System.Drawing.Size(278, 31);
+            this.NameTb.TabIndex = 5;
             // 
             // label4
             // 
@@ -115,13 +115,13 @@ namespace GymSystem
             this.label5.TabIndex = 8;
             this.label5.Text = "Celular:";
             // 
-            // textBox2
+            // PhoneTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(449, 184);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 31);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.PhoneTb.Location = new System.Drawing.Point(449, 184);
+            this.PhoneTb.Name = "PhoneTb";
+            this.PhoneTb.Size = new System.Drawing.Size(250, 31);
+            this.PhoneTb.TabIndex = 7;
+            this.PhoneTb.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
@@ -135,13 +135,13 @@ namespace GymSystem
             this.label6.Text = "Idade:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox3
+            // AgeTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(826, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 31);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.AgeTb.Location = new System.Drawing.Point(826, 184);
+            this.AgeTb.Name = "AgeTb";
+            this.AgeTb.Size = new System.Drawing.Size(250, 31);
+            this.AgeTb.TabIndex = 9;
+            this.AgeTb.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label7
             // 
@@ -155,16 +155,16 @@ namespace GymSystem
             this.label7.Text = "Gênero";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // comboBox2
+            // GenderCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.GenderCb.FormattingEnabled = true;
+            this.GenderCb.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox2.Location = new System.Drawing.Point(58, 401);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(195, 33);
-            this.comboBox2.TabIndex = 14;
+            this.GenderCb.Location = new System.Drawing.Point(58, 401);
+            this.GenderCb.Name = "GenderCb";
+            this.GenderCb.Size = new System.Drawing.Size(195, 33);
+            this.GenderCb.TabIndex = 14;
             // 
             // label8
             // 
@@ -178,12 +178,12 @@ namespace GymSystem
             this.label8.Text = "Mensalidade:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox4
+            // AmountTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(449, 401);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 31);
-            this.textBox4.TabIndex = 15;
+            this.AmountTb.Location = new System.Drawing.Point(449, 401);
+            this.AmountTb.Name = "AmountTb";
+            this.AmountTb.Size = new System.Drawing.Size(250, 31);
+            this.AmountTb.TabIndex = 15;
             // 
             // label9
             // 
@@ -197,18 +197,18 @@ namespace GymSystem
             this.label9.Text = "Horário:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // comboBox1
+            // TimingCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TimingCb.FormattingEnabled = true;
+            this.TimingCb.Items.AddRange(new object[] {
             "6h-8h",
             "8h-10h",
             "18h-20h",
             "20h-22h"});
-            this.comboBox1.Location = new System.Drawing.Point(826, 399);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 33);
-            this.comboBox1.TabIndex = 19;
+            this.TimingCb.Location = new System.Drawing.Point(826, 399);
+            this.TimingCb.Name = "TimingCb";
+            this.TimingCb.Size = new System.Drawing.Size(182, 33);
+            this.TimingCb.TabIndex = 19;
             // 
             // button2
             // 
@@ -221,6 +221,7 @@ namespace GymSystem
             this.button2.TabIndex = 20;
             this.button2.Text = "LIMPAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -233,6 +234,7 @@ namespace GymSystem
             this.button1.TabIndex = 21;
             this.button1.Text = "ADICIONAR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button3
             // 
@@ -245,6 +247,7 @@ namespace GymSystem
             this.button3.TabIndex = 22;
             this.button3.Text = "VOLTAR";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label10
             // 
@@ -279,18 +282,18 @@ namespace GymSystem
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TimingCb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.AmountTb);
+            this.Controls.Add(this.GenderCb);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.AgeTb);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PhoneTb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameTb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -310,18 +313,18 @@ namespace GymSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AgeTb;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox GenderCb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox AmountTb;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox TimingCb;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;

@@ -29,23 +29,27 @@ namespace GymSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TimingCb = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.AmountTb = new System.Windows.Forms.TextBox();
+            this.GenderCb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AgeTb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PhoneTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.MemberSDGV = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberSDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -57,8 +61,9 @@ namespace GymSystem
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 53);
             this.button3.TabIndex = 39;
-            this.button3.Text = "VOLTAR";
+            this.button3.Text = "DELETAR";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button1
             // 
@@ -83,19 +88,20 @@ namespace GymSystem
             this.button2.TabIndex = 37;
             this.button2.Text = "LIMPAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // TimingCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TimingCb.FormattingEnabled = true;
+            this.TimingCb.Items.AddRange(new object[] {
             "6h-8h",
             "8h-10h",
             "18h-20h",
             "20h-22h"});
-            this.comboBox1.Location = new System.Drawing.Point(11, 647);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 33);
-            this.comboBox1.TabIndex = 36;
+            this.TimingCb.Location = new System.Drawing.Point(11, 647);
+            this.TimingCb.Name = "TimingCb";
+            this.TimingCb.Size = new System.Drawing.Size(182, 33);
+            this.TimingCb.TabIndex = 36;
             // 
             // label9
             // 
@@ -113,36 +119,36 @@ namespace GymSystem
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(11, 525);
+            this.label8.Location = new System.Drawing.Point(11, 523);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 39);
             this.label8.TabIndex = 34;
             this.label8.Text = "Mensalidade:";
             // 
-            // textBox4
+            // AmountTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(11, 565);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 31);
-            this.textBox4.TabIndex = 33;
+            this.AmountTb.Location = new System.Drawing.Point(11, 565);
+            this.AmountTb.Name = "AmountTb";
+            this.AmountTb.Size = new System.Drawing.Size(250, 31);
+            this.AmountTb.TabIndex = 33;
             // 
-            // comboBox2
+            // GenderCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.GenderCb.FormattingEnabled = true;
+            this.GenderCb.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox2.Location = new System.Drawing.Point(15, 378);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(195, 33);
-            this.comboBox2.TabIndex = 32;
+            this.GenderCb.Location = new System.Drawing.Point(24, 447);
+            this.GenderCb.Name = "GenderCb";
+            this.GenderCb.Size = new System.Drawing.Size(195, 33);
+            this.GenderCb.TabIndex = 32;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(15, 324);
+            this.label7.Location = new System.Drawing.Point(24, 393);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 39);
             this.label7.TabIndex = 31;
@@ -153,18 +159,18 @@ namespace GymSystem
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(15, 428);
+            this.label6.Location = new System.Drawing.Point(15, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 39);
             this.label6.TabIndex = 30;
             this.label6.Text = "Idade:";
             // 
-            // textBox3
+            // AgeTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 470);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 31);
-            this.textBox3.TabIndex = 29;
+            this.AgeTb.Location = new System.Drawing.Point(15, 357);
+            this.AgeTb.Name = "AgeTb";
+            this.AgeTb.Size = new System.Drawing.Size(250, 31);
+            this.AgeTb.TabIndex = 29;
             // 
             // label5
             // 
@@ -177,12 +183,12 @@ namespace GymSystem
             this.label5.TabIndex = 28;
             this.label5.Text = "Celular:";
             // 
-            // textBox2
+            // PhoneTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 266);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 31);
-            this.textBox2.TabIndex = 27;
+            this.PhoneTb.Location = new System.Drawing.Point(12, 266);
+            this.PhoneTb.Name = "PhoneTb";
+            this.PhoneTb.Size = new System.Drawing.Size(250, 31);
+            this.PhoneTb.TabIndex = 27;
             // 
             // label4
             // 
@@ -195,12 +201,12 @@ namespace GymSystem
             this.label4.TabIndex = 26;
             this.label4.Text = "Nome:";
             // 
-            // textBox1
+            // NameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 31);
-            this.textBox1.TabIndex = 25;
+            this.NameTb.Location = new System.Drawing.Point(12, 168);
+            this.NameTb.Name = "NameTb";
+            this.NameTb.Size = new System.Drawing.Size(278, 31);
+            this.NameTb.TabIndex = 25;
             // 
             // label2
             // 
@@ -225,32 +231,78 @@ namespace GymSystem
             this.label1.TabIndex = 23;
             this.label1.Text = "GYM SYSTEM\r\n";
             // 
+            // MemberSDGV
+            // 
+            this.MemberSDGV.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.MemberSDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MemberSDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MemberSDGV.GridColor = System.Drawing.Color.CadetBlue;
+            this.MemberSDGV.Location = new System.Drawing.Point(344, 168);
+            this.MemberSDGV.Name = "MemberSDGV";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MemberSDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.MemberSDGV.RowHeadersWidth = 62;
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Blue;
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.MemberSDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MemberSDGV.RowTemplate.Height = 25;
+            this.MemberSDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MemberSDGV.Size = new System.Drawing.Size(885, 493);
+            this.MemberSDGV.TabIndex = 47;
+            this.MemberSDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MemberSDGV_CellContentClick);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Navy;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(653, 721);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(181, 53);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "VOLTAR";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // UpdateDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1307, 809);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.MemberSDGV);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TimingCb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.AmountTb);
+            this.Controls.Add(this.GenderCb);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.AgeTb);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PhoneTb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateDelete";
             this.Text = "UpdateDelete";
+            this.Load += new System.EventHandler(this.UpdateDelete_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MemberSDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,19 +313,21 @@ namespace GymSystem
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox TimingCb;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox AmountTb;
+        private System.Windows.Forms.ComboBox GenderCb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AgeTb;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView MemberSDGV;
+        private System.Windows.Forms.Button button4;
     }
 }

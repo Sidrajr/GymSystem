@@ -17,7 +17,9 @@ namespace GymSystem
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-
+            AddMember addmember = new AddMember();
+            addmember.Show();
+            this.Hide();
         }
     }
 }
