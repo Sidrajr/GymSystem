@@ -21,5 +21,29 @@ namespace GymSystem
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UidTb.Text = "";
+            PassTb.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (UidTb.Text == "" || PassTb.Text == "")
+            {
+                MessageBox.Show("Algo está errado");
+            }
+            else if (UidTb.Text == "Admin" && PassTb.Text == "Admin")
+            {
+                MainForm mainform = new MainForm();
+                mainform.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Algo está errado");
+            }
+        }
     }
 }

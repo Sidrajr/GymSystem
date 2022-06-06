@@ -21,5 +21,27 @@ namespace GymSystem
             addmember.Show();
             this.Hide();
         }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+           UpdateDelete Update  = new UpdateDelete();
+            Update.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton24_Click(object sender, EventArgs e)
+        {
+            Payment pay = new Payment();
+            pay.Show();
+            this.Hide();
+
+        }
+
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            ViewMember view = new ViewMember();
+            view.Show();
+            this.Hide();
+        }
     }
 }

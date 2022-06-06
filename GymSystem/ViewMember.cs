@@ -51,5 +51,20 @@ namespace GymSystem
             this.Hide();
 
         }
+        private void filterByName()
+        {
+            Con.Open();
+            string query = "select * from MemberTbl where MName ='" + SearchName.Text + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder();
+            var ds = new DataSet();
+            sda.Fill(ds);
+            MemberSDGV.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            filterByName();
+        }
     }
 }

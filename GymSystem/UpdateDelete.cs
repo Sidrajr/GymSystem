@@ -46,7 +46,7 @@ namespace GymSystem
         int key = 0;
         private void MemberSDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //key = Convert.ToInt32(MemberSDGV.SelectedRows[0].Cells[1].Value.ToString());
+            key = Convert.ToInt32(MemberSDGV.SelectedRows[0].Cells[0].Value.ToString());
             NameTb.Text = MemberSDGV.SelectedRows[0].Cells[1].Value.ToString();
             PhoneTb.Text = MemberSDGV.SelectedRows[0].Cells[2].Value.ToString();
             AgeTb.Text = MemberSDGV.SelectedRows[0].Cells[3].Value.ToString();
@@ -69,7 +69,7 @@ namespace GymSystem
         {
            if ( key == 0)
             {
-                MessageBox.Show("Selecione um membra para deletar!");
+                MessageBox.Show("Selecione um membro para deletar!");
 
             }
             else
@@ -77,11 +77,16 @@ namespace GymSystem
                 try
                 {
                     Con.Open();
-
+                    string query = "delete from MemberTbl where MId=" + key + ";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Membro deletado com sucesso!");
                     Con.Close();
-                }catch (Exception Ex)
+                    populate();
+                }
+                catch (Exception Ex)
                 {
-
+                    MessageBox.Show(Ex.Message);
                 }
             }
         }
@@ -93,6 +98,35 @@ namespace GymSystem
             this.Hide();
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (key == 0 || NameTb.Text == "" || PhoneTb.Text== "" || AgeTb.Text == ""|| AmountTb.Text == "" || GenderCb.Text =="" || TimingCb.Text== "")
+            {
+                MessageBox.Show("Falta informação!");
+
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();
+                    string query = "update MemberTbl set MName='" + NameTb.Text + "', MPhone='" + PhoneTb.Text + "',MGen='" + GenderCb.Text + "',MAge=" + AgeTb.Text + ",MAmount=" + AmountTb.Text + ",MTimimg='" + TimingCb.Text + "'where MId =" + key + ";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Membro atualizado com sucesso!");
+                    Con.Close();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
